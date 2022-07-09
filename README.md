@@ -94,11 +94,31 @@ Created: 2022/5/15
   - DB：　AWS DynamoDB
   - API：　AWS API Gateway
 - フロント：
-  - React＋JavaScript
+  - Vue.js
 - CI/CDツール：　Amplifyでビルド
 - ソース管理：　Git（https://Gitリポジトリ・・・）
 
 詳細は[アーキテクチャ図](./docs/architects.png)を参照
+
+## 環境構築
+### ソースを取得
+```
+git clone git@github.com:kiku-tea/kit-kakeibo.git
+```
+
+### フロントエンド
+1. nvmをインストール
+2. nodeをインストール  
+  ``nvm install node``
+3. プロジェクトを取得  
+  ```
+  $ cd kit-kakeibo
+  $ npm install
+  ```
+4. ビルド
+   ``npm run build``
+5. 実行
+   ``npm run serve``
 
 
 ## コーディング規約
