@@ -101,16 +101,18 @@ Created: 2022/5/15
 詳細は[アーキテクチャ図](./docs/architects.png)を参照
 
 ## 環境構築
-### ソースを取得
+### 1. ソースを取得
 ```
 git clone git@github.com:kiku-tea/kit-kakeibo.git
 ```
 
-### フロントエンド
-1. nvmをインストール
-2. nodeをインストール  
+### 2. フロントエンドの環境構築
+1. nvmをインストール（nodeをインストールしていない場合）  
+  nodeのバージョン管理ツールをインストール  
+  [nvm公式サイト](https://github.com/nvm-sh/nvm)
+2. nodeをインストール（nodeをインストールしていない場合）  
   ``nvm install node``
-3. プロジェクトを取得  
+3. プロジェクトのライブラリを取得  
   ```
   $ cd kit-kakeibo
   $ npm install
@@ -119,6 +121,9 @@ git clone git@github.com:kiku-tea/kit-kakeibo.git
    ``npm run build``
 5. 実行
    ``npm run serve``
+
+### 3. バックエンドの環境構築
+準備中
 
 
 ## コーディング規約
