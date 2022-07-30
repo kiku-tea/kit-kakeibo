@@ -25,7 +25,8 @@
     <router-link to="/register/mailaddress-form/complete">新-登:メール送信完</router-link> |
     <router-link to="/register/confirmation">新-登:入力確認</router-link> |
     <router-link to="/register">新-登:入力</router-link> |
-    
+    <router-link to="/register">新-登:入力</router-link> |
+
 
   </nav>
   <router-view>

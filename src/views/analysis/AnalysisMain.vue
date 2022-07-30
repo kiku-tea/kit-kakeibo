@@ -7,11 +7,12 @@
       <td v-text="user.id"></td>
       <td v-text="user.name"></td>
       <td v-text="user.email"></td>
+      {{ this.filteredUsers }}
     </tr>
   </table>
 </template>
 <script>
-import modal from '@/components/modal/TestModal.vue'
+import modal from '@/components/molecules/TestModal.vue'
 // import { USERWHITESPACABLE_TYPES } from '@babel/types';
 export default{
   components:{
@@ -49,7 +50,7 @@ export default{
                 },
             ]
     }
-     
+
   },
   computed:{
     filteredUsers: function(){
