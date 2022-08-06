@@ -1,3 +1,25 @@
+<style scoped>
+.form-item {
+  margin: 0 auto;
+  text-align: center;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 50%;
+  padding: .5em;
+  font: inherit;
+}
+
+button {
+  padding: 0.5em;
+  margin: 1em;
+}
+</style>
+
 <template>
   <div class="login">
     <div class="form-item">
@@ -20,6 +42,7 @@
     </div>
     <div class="form-item">
       <button class="button" @click="handle()">Button</button>
+      <MainButton v-bind:text="title"><span style="color: red;">けんてぃ</span></MainButton>
     </div>
   </div>
 </template>
@@ -27,15 +50,20 @@
 <script>
 import { defineComponent } from 'vue';
 import crypto from 'crypto-js';
+import MainButton from '@/components/atoms/MainButton.vue';
 
 
 
 export default defineComponent({
   name: 'LoginForm',
+  components: {
+    MainButton
+  },
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      title: 'ボタン',
     }
   },
   props: {
@@ -79,24 +107,3 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.form-item {
-  margin: 0 auto;
-  text-align: center;
-}
-
-label {
-  display: block;
-}
-
-input {
-  width: 50%;
-  padding: .5em;
-  font: inherit;
-}
-
-button {
-  padding: 0.5em;
-  margin: 1em;
-}
-</style>
