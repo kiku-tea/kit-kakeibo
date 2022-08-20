@@ -42,7 +42,7 @@ button {
     </div>
     <div class="form-item">
       <button class="button" @click="handle()">Button</button>
-      <MainButton v-bind:text="title"><span style="color: red;">けんてぃ</span></MainButton>
+      <MainButton v-bind:text="title" bgColor="#f0f" isCloseProp="{{isClose}}" v-bind:styleObject="styleObj"><span style="color: red;">けんてぃ</span></MainButton>
     </div>
   </div>
 </template>
@@ -64,6 +64,11 @@ export default defineComponent({
       email: '',
       password: '',
       title: 'ボタン',
+      isClose: true,
+      styleObj: {
+        backgroundColor: '#0f0',
+        color: '#FFF'
+      }
     }
   },
   props: {
