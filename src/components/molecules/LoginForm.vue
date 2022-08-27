@@ -42,7 +42,10 @@ button {
     </div>
     <div class="form-item">
       <button class="button" @click="handle()">Button</button>
-      <MainButton v-bind:text="title" bgColor="#f0f" isCloseProp="{{isClose}}" v-bind:styleObject="styleObj"><span style="color: red;">けんてぃ</span></MainButton>
+      <MainButton v-bind:text="title" 
+        bgColor="#f0f" v-bind:isCloseProp="isClose" 
+        :onClickProp="onClick"
+        v-bind:styleObject="styleObj"><span style="color: red;">けんてぃ</span></MainButton>
     </div>
   </div>
 </template>
@@ -51,7 +54,6 @@ button {
 import { defineComponent } from 'vue';
 import crypto from 'crypto-js';
 import MainButton from '@/components/atoms/MainButton.vue';
-
 
 
 export default defineComponent({
@@ -64,11 +66,12 @@ export default defineComponent({
       email: '',
       password: '',
       title: 'ボタン',
-      isClose: true,
+      isClose: false,
       styleObj: {
         backgroundColor: '#0f0',
         color: '#FFF'
-      }
+      },
+      onClick: (e)=>{alert(e)}
     }
   },
   props: {
