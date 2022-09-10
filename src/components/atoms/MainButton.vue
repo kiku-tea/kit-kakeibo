@@ -41,7 +41,7 @@ export default{
     stopEvent: function(){
         event.stopPropagation()
     },
-    onClick: this.onClickProp
+
   }
 }
 
