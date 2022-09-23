@@ -2,7 +2,7 @@
 	<button class="button" v-bind:style="{ backgroundColor: bgColor}">{{ text }}<slot></slot></button>
   <button v-bind:class="{close: isCloseProp}" >{{ text }}<slot></slot>1</button>
   <button v-bind:class="{close: isCloseProp2}" >{{ text }}<slot></slot>2</button>
-  <button v-bind:style="styleObject" onClick="{{onClick}}">{{ text }}<slot></slot></button>
+  <button v-bind:style="styleObject" v-on:click="onClickProp2">alert{{ text }}<slot></slot></button>
 </template>
 
 <style scoped>
@@ -33,7 +33,16 @@ export default{
 
     }
   },
-  props: ['text', 'bgColor', 'isCloseProp', 'styleObject', 'isCloseProp2', 'onClickProp'],
+  // props: ['text', 'bgColor', 'isCloseProp', 'styleObject', 'isCloseProp2', 'onClickProp',
+  // ],
+  props: {
+    text:String, 
+    bgColor:String,
+    isCloseProp:String, 
+    styleObject:Object, 
+    isCloseProp2:Boolean, 
+    onClickProp2:Function
+  },
   methods:{
     clickEvent(){
         this.$emit('form-child')

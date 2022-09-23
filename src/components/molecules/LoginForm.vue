@@ -42,9 +42,8 @@ button {
     </div>
     <div class="form-item">
       <button class="button" @click="handle()">Button</button>
-      <MainButton v-bind:text="title" 
+      <MainButton v-bind:text="title" v-bind:onClickProp2="alertTest"
         bgColor="#f0f" v-bind:isCloseProp="isClose" 
-        :onClickProp="onClick"
         v-bind:styleObject="styleObj"><span style="color: red;">けんてぃ</span></MainButton>
     </div>
   </div>
@@ -71,7 +70,6 @@ export default defineComponent({
         backgroundColor: '#0f0',
         color: '#FFF'
       },
-      onClick: (e)=>{alert(e)}
     }
   },
   props: {
@@ -90,6 +88,10 @@ export default defineComponent({
         }
       })
       .catch(err => { throw err })
+    },
+    alertTest(){
+      alert("アラートテスト")
+      console.log("アラートテスト");
     },
 
     //cookieの暗号化概要
