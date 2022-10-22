@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>aaaa</div>
   <!-- Header -->
   <NavHeader/>
   <!-- AggregateResults -->
@@ -13,17 +13,9 @@ export default{
     NavHeader,
   },
   data(){
-    return{
-     
+    return{  
     }
-
   },
-  computed:{
-    
-  },
-  methods:{
-    
-  }
 }
 
 </script>
