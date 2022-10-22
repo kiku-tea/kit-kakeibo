@@ -3,10 +3,12 @@
         <!-- ロゴ img-->
         <p>ロゴimg</p>
         <!-- ボタン -->
-        <button>ボタン1</button>
-        <button>ボタン2</button>
-        <button>ボタン3</button>
-        <button>ボタン4</button>
+        <div class="flex">
+            <MainButton v-bind:text="text1"></MainButton>
+            <MainButton v-bind:text="text2"></MainButton>
+            <MainButton v-bind:text="text3"></MainButton>
+            <MainButton v-bind:text="text4"></MainButton>
+        </div>
         <!-- SNSシェア -->
         <div class="share_buttons">
             <SharingButtom v-bind:link="toTwitterLink" v-bind:icon="twitterIcon" />
@@ -18,10 +20,12 @@
 
 </template>
 <script>
-import SharingButtom from "@/components/atoms/SharingButtom.vue"
+import SharingButtom from "@/components/atoms/SharingButtom.vue";
+import MainButton from '@/components/atoms/MainButton.vue';
 export default {
     components: {
         SharingButtom,
+        MainButton,
     },
     data() {
         return {
@@ -29,6 +33,10 @@ export default {
             twitterIcon: require("@/assets/img/png/twitterIconCircleBlue.png"),
             toLineLink: "//timeline.line.me/social-plugin/share?url=シェアするページのURL&text=サンプルテキスト",
             lineIcon: require("@/assets/img/png/lineIconCircleGreen.png"),
+            text1: '記録',
+            text2: '分析',
+            text3: '履歴',
+            text4: 'マイページ',
         }
     },
 }
@@ -39,5 +47,21 @@ export default {
 }
 .share_buttons {
     display: flex;
+}
+/* リセット */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+}
+
+
+.flex {
+    display: flex;
+    gap: 6px;
 }
 </style>
