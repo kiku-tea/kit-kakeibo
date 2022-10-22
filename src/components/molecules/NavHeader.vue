@@ -58,4 +58,20 @@ export default {
 .share_buttons {
     display: flex;
 }
+/* リセット */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+}
+
+
+.flex {
+    display: flex;
+    gap: 6px;
+}
 </style>

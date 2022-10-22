@@ -29,7 +29,7 @@ export default defineComponent({
 
 <style scoped>
 .login-view {
-  width: 400px;
+  /* width: 400px; */
   margin: auto;
 }
 </style>
