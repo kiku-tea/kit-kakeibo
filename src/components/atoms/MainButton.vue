@@ -7,7 +7,7 @@
 		padding: 0.5em 0;
 		width: 147px;
     background-color: #2C3E50;
-		color: #f00;
+		color: #fff;
 	}
 </style>
 
