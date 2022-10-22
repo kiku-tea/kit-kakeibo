@@ -1,65 +1,28 @@
 <template>
-  <button class="mainButton">{{ text }}</button>
+  <button class="button" v-on:click="onClick" > {{text}}</button>
 </template>
-  <!-- <button class="button" v-bind:style="{ backgroundColor: bgColor}">{{ text }}<slot></slot></button>
-  <button v-bind:class="{close: isCloseProp}" >{{ text }}<slot></slot>1</button>
-  <button v-bind:class="{close: isCloseProp2}" >{{ text }}<slot></slot>2</button>
-  <button v-bind:style="styleObject" v-on:click="onClickProp2">alert{{ text }}<slot></slot></button> -->
 
 <style scoped>
-  .mainButton {
-    width: 100px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-	/* .button {
-		margin: 0;
+	.button {
 		padding: 0.5em 0;
 		width: 147px;
-		background-color: #2C3E50;
-    background-color: #fff;
+    background-color: #2C3E50;
 		color: #fff;
 	}
-  .close{
-    background-color: #000;
-    color: #f0f;
-  } */
 </style>
 
 <script>
-// import { defineComponent } from '@vue/composition-api'
 
-// export default defineComponent({
-// 	name : MainButton,
-// })
 
 export default{
   data(){
     return{
-
     }
   },
-  // props: ['text', 'bgColor', 'isCloseProp', 'styleObject', 'isCloseProp2', 'onClickProp',
-  // ],
   props: {
-    text:String,
-    bgColor:String,
-    isCloseProp:String,
-    styleObject:Object,
-    isCloseProp2:Boolean,
-    onClickProp2:Function
+    text:String, 
+    onClick:Function
   },
-  methods:{
-    clickEvent(){
-        this.$emit('form-child')
-    },
-    stopEvent: function(){
-        event.stopPropagation()
-    },
-
-  }
 }
 
 </script>
