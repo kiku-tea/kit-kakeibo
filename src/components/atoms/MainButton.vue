@@ -1,5 +1,5 @@
 <template>
-  <button class="button" v-on:click="onClick" > {{text}}</button>
+  <button class="button" v-on:click="onClick">{{text}}</button>
 </template>
 
 <style scoped>
@@ -20,7 +20,7 @@ export default{
     }
   },
   props: {
-    text:String, 
+    text:String,
     onClick:Function
   },
 }
