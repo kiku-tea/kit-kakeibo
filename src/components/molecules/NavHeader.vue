@@ -3,28 +3,22 @@
         <!-- ロゴ img-->
         <p>ロゴimg</p>
         <!-- ボタン -->
-        <div class="flex">
-            <MainButton v-bind:text="text1"></MainButton>
-            <MainButton v-bind:text="text2"></MainButton>
-            <MainButton v-bind:text="text3"></MainButton>
-            <MainButton v-bind:text="text4"></MainButton>
+        <div v-for="nav in navs" :key="nav.text" >
+            <MainButton :text="nav.text" :onClick="nav.onClick"/>
         </div>
         <!-- SNSシェア -->
         <div class="share_buttons">
-            <SharingButtom v-bind:link="toTwitterLink" v-bind:icon="twitterIcon" />
-            <SharingButtom v-bind:link="toLineLink" v-bind:icon="lineIcon" />
+            <SharingButton v-bind:link="toTwitterLink" v-bind:icon="twitterIcon" />
+            <SharingButton v-bind:link="toLineLink" v-bind:icon="lineIcon" />
         </div>
     </div>
-
-
-
 </template>
 <script>
-import SharingButtom from "@/components/atoms/SharingButtom.vue";
-import MainButton from '@/components/atoms/MainButton.vue';
+import SharingButton from "@/components/atoms/SharingButton.vue"
+import MainButton from "@/components/atoms/MainButton.vue"
 export default {
     components: {
-        SharingButtom,
+        SharingButton,
         MainButton,
     },
     data() {
@@ -33,12 +27,28 @@ export default {
             twitterIcon: require("@/assets/img/png/twitterIconCircleBlue.png"),
             toLineLink: "//timeline.line.me/social-plugin/share?url=シェアするページのURL&text=サンプルテキスト",
             lineIcon: require("@/assets/img/png/lineIconCircleGreen.png"),
-            text1: '記録',
-            text2: '分析',
-            text3: '履歴',
-            text4: 'マイページ',
+            navs:[
+                {text:"入力", onClick:() => this.toInput()},
+                {text:"分析", onClick:() => this.toAnalysis()},
+                {text:"履歴", onClick:() => this.toRecord()},
+                {text:"マイページ", onClick: () => this.toMypage()},
+            ]
         }
     },
+    methods:{
+        toInput(){
+            this.$router.push("/input-list/:id")
+        },
+        toAnalysis(){
+            this.$router.push("/analysis/:id")
+        },
+        toRecord(){
+            this.$router.push("/record")
+        },
+        toMypage(){
+            this.$router.push("/mypage/:id")
+        }
+    }
 }
 </script>
 <style scoped>
