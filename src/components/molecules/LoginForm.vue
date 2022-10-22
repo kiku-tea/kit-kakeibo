@@ -18,6 +18,12 @@ button {
   padding: 0.5em;
   margin: 1em;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>
 
 <template>
@@ -41,10 +47,16 @@ button {
       >
     </div>
     <div class="form-item">
-      <button class="button" @click="handle()">Button</button>
+      <!-- <button class="button" @click="handle()">Button</button>
       <MainButton v-bind:text="title" v-bind:onClickProp2="alertTest"
-        bgColor="#f0f" v-bind:isCloseProp="isClose" 
-        v-bind:styleObject="styleObj"><span style="color: red;">けんてぃ</span></MainButton>
+        bgColor="#f0f" v-bind:isCloseProp="isClose"
+        v-bind:styleObject="styleObj"><span style="color: red;">けんてぃ</span></MainButton> -->
+      <div class="flex">
+        <MainButton v-bind:text="ボタン1"></MainButton>
+        <MainButton v-bind:text="ボタン2"></MainButton>
+        <MainButton v-bind:text="ボタン3"></MainButton>
+        <MainButton v-bind:text="ボタン4"></MainButton>
+      </div>
     </div>
   </div>
 </template>

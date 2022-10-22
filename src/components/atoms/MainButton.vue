@@ -1,23 +1,31 @@
 <template>
-	<button class="button" v-bind:style="{ backgroundColor: bgColor}">{{ text }}<slot></slot></button>
+  <button class="mainButton">{{ text }}</button>
+</template>
+  <!-- <button class="button" v-bind:style="{ backgroundColor: bgColor}">{{ text }}<slot></slot></button>
   <button v-bind:class="{close: isCloseProp}" >{{ text }}<slot></slot>1</button>
   <button v-bind:class="{close: isCloseProp2}" >{{ text }}<slot></slot>2</button>
-  <button v-bind:style="styleObject" v-on:click="onClickProp2">alert{{ text }}<slot></slot></button>
-</template>
+  <button v-bind:style="styleObject" v-on:click="onClickProp2">alert{{ text }}<slot></slot></button> -->
 
 <style scoped>
-	.button {
+  .mainButton {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+	/* .button {
 		margin: 0;
 		padding: 0.5em 0;
 		width: 147px;
-		/* background-color: #2C3E50; */
+		background-color: #2C3E50;
     background-color: #fff;
 		color: #fff;
 	}
   .close{
     background-color: #000;
     color: #f0f;
-  }
+  } */
 </style>
 
 <script>
@@ -36,11 +44,11 @@ export default{
   // props: ['text', 'bgColor', 'isCloseProp', 'styleObject', 'isCloseProp2', 'onClickProp',
   // ],
   props: {
-    text:String, 
+    text:String,
     bgColor:String,
-    isCloseProp:String, 
-    styleObject:Object, 
-    isCloseProp2:Boolean, 
+    isCloseProp:String,
+    styleObject:Object,
+    isCloseProp2:Boolean,
     onClickProp2:Function
   },
   methods:{
