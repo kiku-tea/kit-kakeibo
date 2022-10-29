@@ -145,9 +145,9 @@ const routes = [
   },
   // HP制作
   {
-    path: '/home-page/hogetitle/hogepath',
+    path: '/home-page/rageblue',
     name: 'hogetitle-hogepath',
-    component: () => import("../views/hp/HogePage.vue")
+    component: () => import("../views/home-page/rageblue/IndexView.vue")
   },
 
 
