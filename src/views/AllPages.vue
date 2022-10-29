@@ -32,7 +32,7 @@
 		</section>
 		<section>
 			<h2>HP制作</h2>
-			<router-link to="/home-page/hogetitle/hogepath">ホームページ1</router-link> <br />
+			<router-link to="/home-page/rageblue">レイジブルートップページ</router-link> <br />
 		</section>
 
 
