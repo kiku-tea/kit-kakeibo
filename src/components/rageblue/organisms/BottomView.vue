@@ -8,28 +8,18 @@
   </section>
   
 </template>
-<script>
+<script setup>
 import FooterStaffList from '../molecules/FooterStaffList.vue';
 import LargeLinkButton from '../atoms/LargeLinkButton.vue';
 
-export default{
-  name: 'BottomView',
-  components:{
-    FooterStaffList,
-    LargeLinkButton
-  },
-  data(){
-    return {
-      linkButtonText: 'BRAND TOP',
-      staffList: [
-        'Photo & Movie_Jun Okada［BE NATURAL］',
-        'Styling_Tomoya Yagi',
-        'Hair & Make-up_Yuka Toyama［mod’s hair］',
-        'Web Development_Yusuke Fukunaga'
-      ],
-    }
-  }
-}
+const linkButtonText = 'BRAND TOP';
+const staffList = [
+  'Photo & Movie_Jun Okada［BE NATURAL］',
+  'Styling_Tomoya Yagi',
+  'Hair & Make-up_Yuka Toyama［mod’s hair］',
+  'Web Development_Yusuke Fukunaga'
+];
+
 </script>
 <style>
 .bottom__brandbtn{
