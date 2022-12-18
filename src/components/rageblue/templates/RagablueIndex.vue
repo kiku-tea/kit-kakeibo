@@ -5,8 +5,13 @@
             <PCNav/>
         </div>
         <div class="main__right-container">
-            <BottomView></BottomView>
-            <FooterView></FooterView>
+            <LookBlock>
+                <Profile6View></Profile6View>
+            </LookBlock>
+            <LookBlock>
+                <BottomView></BottomView>
+                <FooterView></FooterView>
+            </LookBlock>
         </div>
     </main>
 </template>
@@ -14,11 +19,16 @@
  import PCNav from '../organisms/PCNav.vue';
  import BottomView from '../organisms/BottomView.vue';
  import FooterView from '../organisms/FooterView.vue';
+ import Profile6View from '../organisms/Profile6View.vue';
+ import LookBlock from '../molecules/LookBlock.vue';
+
  export default{
     components:{
         PCNav,
         BottomView,
-        FooterView
+        FooterView,
+        LookBlock,
+        Profile6View
     }
  }
 </script>
