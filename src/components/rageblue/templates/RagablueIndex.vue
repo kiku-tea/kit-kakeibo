@@ -2,7 +2,7 @@
     <p>RagableuIndex</p>
     <main class="main">
         <div class="main__left-container">
-            <PCNav/>
+            <PCNav />
         </div>
         <div class="main__right-container">
             <LookBlock>
@@ -16,43 +16,61 @@
     </main>
 </template>
 <script>
- import PCNav from '../organisms/PCNav.vue';
- import BottomView from '../organisms/BottomView.vue';
- import FooterView from '../organisms/FooterView.vue';
- import Profile6View from '../organisms/Profile6View.vue';
- import LookBlock from '../molecules/LookBlock.vue';
+import PCNav from '../organisms/PCNav.vue';
+import BottomView from '../organisms/BottomView.vue';
+import FooterView from '../organisms/FooterView.vue';
+import Profile6View from '../organisms/Profile6View.vue';
+import LookBlock from '../molecules/LookBlock.vue';
 
- export default{
-    components:{
+export default {
+    components: {
         PCNav,
         BottomView,
         FooterView,
         LookBlock,
         Profile6View
     }
- }
+}
 </script>
 <style scoped>
-.main{
+.main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.main > div{
+
+.main>div {
     flex-basis: 100%;
 }
-.main .main__right-container{
+
+.main__left-container {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.main .main__right-container {
     margin: 0;
     padding: 0;
 }
-@media screen and (min-width: 769px){
-    .main > div{
+
+@media screen and (min-width: 769px) {
+    .main>div {
         flex-basis: 50%;
     }
-    .main .main__right-container{
+
+    .main .main__right-container {
         width: 375px;
         margin: auto;
         max-width: 375px;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .main__left-container {
+        position: relative;
     }
 }
 </style>
