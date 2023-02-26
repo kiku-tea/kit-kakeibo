@@ -7,6 +7,9 @@
         <div class="main__right-container">
             <HeaderView />
             <LookBlock>
+                <Profile1View></Profile1View>
+            </LookBlock>
+            <LookBlock>
                 <Profile6View></Profile6View>
             </LookBlock>
             <LookBlock>
@@ -20,6 +23,7 @@
 import PCNav from '../organisms/PCNav.vue';
 import BottomView from '../organisms/BottomView.vue';
 import FooterView from '../organisms/FooterView.vue';
+import Profile1View from '../organisms/Profile1View.vue'
 import Profile6View from '../organisms/Profile6View.vue';
 import HeaderView from '../organisms/HeaderView.vue';
 import LookBlock from '../molecules/LookBlock.vue';
@@ -30,6 +34,7 @@ export default {
         BottomView,
         FooterView,
         LookBlock,
+        Profile1View,
         Profile6View,
         HeaderView
     }
