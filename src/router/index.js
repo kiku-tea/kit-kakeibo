@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Login from '../components/organisms/LoginView.vue'
-import Top from '../components/organisms/TopView.vue'
+// import Login from '../components/organisms/LoginView.vue'
+// import Top from '../components/organisms/TopView.vue'
 // import { authorizeToken } from './guards'
 //analysis
 import  analysis from '../views/analysis/AnalysisMain.vue'
@@ -29,20 +29,20 @@ import registerForm from '../views/register/RegisterForm.vue'
 const routes = [
 
   //ログイン機能テスト
-  {
-    path: '/',
-    name: 'Top',
-    component: Top,
-    meta: {
-      requiresAuth: true
-    }
+  // {
+  //   path: '/',
+  //   name: 'Top',
+  //   component: Top,
+  //   meta: {
+  //     requiresAuth: true
+  //   }
 
-  },
-  {
-    path: '/login-test',
-    name: 'LoginTest',
-    component: Login
-  },
+  // },
+  // {
+  //   path: '/login-test',
+  //   name: 'LoginTest',
+  //   component: Login
+  // },
   //analysis
   {
     path: '/analysis/:id' ,
@@ -138,6 +138,19 @@ const routes = [
     name: 'RegisterForm' ,
     component: registerForm
   },
+  {
+    path: '/pages',
+    name: 'Pages',
+    component: () => import("../views/AllPages.vue")
+  },
+  // HP制作
+  {
+    path: '/home-page/rageblue',
+    name: 'hogetitle-hogepath',
+    component: () => import("../views/home-page/rageblue/IndexView.vue")
+  },
+
+
 
 ]
 

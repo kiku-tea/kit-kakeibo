@@ -3,25 +3,23 @@
         <!-- ロゴ img-->
         <p>ロゴimg</p>
         <!-- ボタン -->
-        <button>ボタン1</button>
-        <button>ボタン2</button>
-        <button>ボタン3</button>
-        <button>ボタン4</button>
+        <div v-for="nav in navs" :key="nav.text" >
+            <MainButton :text="nav.text" :onClick="nav.onClick"/>
+        </div>
         <!-- SNSシェア -->
         <div class="share_buttons">
-            <SharingButtom v-bind:link="toTwitterLink" v-bind:icon="twitterIcon" />
-            <SharingButtom v-bind:link="toLineLink" v-bind:icon="lineIcon" />
+            <SharingButton v-bind:link="toTwitterLink" v-bind:icon="twitterIcon" />
+            <SharingButton v-bind:link="toLineLink" v-bind:icon="lineIcon" />
         </div>
     </div>
-
-
-
 </template>
 <script>
-import SharingButtom from "@/components/atoms/SharingButtom.vue"
+import SharingButton from "@/components/atoms/SharingButton.vue"
+import MainButton from "@/components/atoms/MainButton.vue"
 export default {
     components: {
-        SharingButtom,
+        SharingButton,
+        MainButton,
     },
     data() {
         return {
@@ -29,8 +27,28 @@ export default {
             twitterIcon: require("@/assets/img/png/twitterIconCircleBlue.png"),
             toLineLink: "//timeline.line.me/social-plugin/share?url=シェアするページのURL&text=サンプルテキスト",
             lineIcon: require("@/assets/img/png/lineIconCircleGreen.png"),
+            navs:[
+                {text:"入力", onClick:() => this.toInput()},
+                {text:"分析", onClick:() => this.toAnalysis()},
+                {text:"履歴", onClick:() => this.toRecord()},
+                {text:"マイページ", onClick: () => this.toMypage()},
+            ]
         }
     },
+    methods:{
+        toInput(){
+            this.$router.push("/input-list/:id")
+        },
+        toAnalysis(){
+            this.$router.push("/analysis/:id")
+        },
+        toRecord(){
+            this.$router.push("/record")
+        },
+        toMypage(){
+            this.$router.push("/mypage/:id")
+        }
+    }
 }
 </script>
 <style scoped>
@@ -39,5 +57,21 @@ export default {
 }
 .share_buttons {
     display: flex;
+}
+/* リセット */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+}
+
+
+.flex {
+    display: flex;
+    gap: 6px;
 }
 </style>
